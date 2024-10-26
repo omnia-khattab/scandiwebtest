@@ -2,8 +2,6 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-
-use Utils\Connection;
 use Validations\Validator;
 use App\Factories\ProductFactory;
 
@@ -40,27 +38,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         
         // Use the factory to create product depend on the productType
         $product = ProductFactory::createProduct($productType, $sku, $name, $price, ...array_slice($data, 4));
-        // var_dump("Product object: " . print_r($product, true));
-        // Log the entire $product object
         error_log("Product object: " . print_r($product, true));
 
-        // Alternatively, you can use var_export for more detailed output
-        error_log("Product object (var_export): " . var_export($product, true));
         // Instantiate the validator
         $validator = new Validator();
 
         // Validate the product data
         $product->validate($validator);
-        error_log("beforeIF");
         // Check for validation errors
         if (empty($validator->getErrors())) {
-            error_log("Before calling saveProduct()");
 
             $productControllerObj->saveProduct($product);
-
-            error_log("After calling saveProduct()");
-            
             echo json_encode(["message" => "Product added successfully", "status" => true]);
+            
         } else {
             http_response_code(400);
             echo json_encode([
