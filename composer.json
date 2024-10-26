@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\":"database/",
+            "Utils\\":"utils/",
+            "Validations\\":"validations/",
+            "Routes\\":"routes"
+        }
+    }
+}

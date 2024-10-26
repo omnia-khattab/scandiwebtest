@@ -1,0 +1,28 @@
+
+main{
+  width: 100vw;
+  min-height: 100vh;
+ 
+  padding: 120px 24px 160px 24px;
+}
+.form-check .form-check-input{
+  margin-left: 0 !important;
+}
+
+.border-dev{
+  border: 2px solid #080d27 !important;
+  border-radius: 6px;
+}
+.borderBottom{
+  border-bottom: 2px solid #080d27 !important;
+}
+.borderTop{
+  border-top: 2px solid #080d27 !important;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+
