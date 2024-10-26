@@ -81,7 +81,7 @@ const handleCheckboxChange = (e, productId) => {
                 products.length > 0 ?( 
         <div className="row m-auto mt-md-5 mt-3">
         {products.map((product,index) => (
-        <div key={index} className="form-check  col-12 col-md-3">
+        <div key={index} className="form-check col-12 col-md-4 col-lg-3">
             <div  className="p-3 m-2 border-dev text-center">
                 <input className="form-check-input" 
                     type="checkbox" 
