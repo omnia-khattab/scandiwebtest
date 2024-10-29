@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -81,7 +82,12 @@ const onSubmit = async (data) => {
     }
   };
 return (
-    <main className="container">
+
+  <>
+    <Helmet>
+      <title>ADD Product</title>
+    </Helmet>
+     <main className="container">
       <form onSubmit={handleSubmit(onSubmit)} id="product_form">
         <div className="borderBottom d-flex justify-content-between align-items-center pb-4">
           <h1 className="">Product Add</h1>
@@ -224,7 +230,8 @@ return (
 
         </div>
       </form>
-    </main>
+    </main> 
+  </>
   );
 }
 

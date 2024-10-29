@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 function Products() {
@@ -62,7 +63,11 @@ const handleCheckboxChange = (e, productId) => {
     };
 
   return (
-    <main className="container">
+    <>
+        <Helmet>
+            <title>Product List</title>
+        </Helmet>
+        <main className="container">
         <div className="borderBottom d-flex flex-wrap justify-content-between align-items-center pb-4">
             <h1 className="">Products List</h1>
             <div className="">
@@ -105,7 +110,9 @@ const handleCheckboxChange = (e, productId) => {
                 ):<p>No products available</p>
     )}
         </div>
-    </main>
+        </main>
+    </>
+   
   )
 }
 
