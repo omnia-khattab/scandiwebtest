@@ -8,7 +8,9 @@ class Book extends Product{
 
     public function __construct( $sku, $name, $price,$productType, $weight) {
         parent::__construct($sku, $name, $price, $productType);
-        $this->weight = $weight;
+       // $this->weight = $weight;
+       $this->weight = htmlspecialchars($weight, ENT_QUOTES, 'UTF-8'); 
+
     }
 
     public function setSpecificAttribute() {

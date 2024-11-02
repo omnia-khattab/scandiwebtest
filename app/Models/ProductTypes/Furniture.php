@@ -10,9 +10,14 @@ class Furniture extends Product{
 
     public function __construct($sku, $name, $price,$productType, $height, $width, $length) {
         parent::__construct($sku, $name, $price, $productType);
-        $this->height = $height;
-        $this->width = $width;
-        $this->length = $length;
+        // $this->height = $height;
+        // $this->width = $width;
+        // $this->length = $length;
+        $this->height = htmlspecialchars($height, ENT_QUOTES, 'UTF-8'); 
+        $this->width = htmlspecialchars($width, ENT_QUOTES, 'UTF-8'); 
+        $this->length = htmlspecialchars($length, ENT_QUOTES, 'UTF-8'); 
+
+        
     }
     public function setSpecificAttribute() {
         return json_encode([

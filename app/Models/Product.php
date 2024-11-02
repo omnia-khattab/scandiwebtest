@@ -17,18 +17,28 @@ abstract class Product{
     }
 
     public function getSku(){
-        return $this->sku;
+        return htmlspecialchars($this->sku, ENT_QUOTES, 'UTF-8'); 
+        //return $this->sku;
+
     }
 
     public function getName(){
-        return $this->name;
+
+        return htmlspecialchars($this->name, ENT_QUOTES, 'UTF-8'); 
+        //return $this->name;
     }
 
     public function getPrice(){
-        return $this->price;
+
+        //return $this->price;
+        return htmlspecialchars($this->price, ENT_QUOTES, 'UTF-8'); 
+
+        
     }
     public function getProductType(){
-        return $this->productType;
+        //return $this->productType;
+        return htmlspecialchars($this->productType, ENT_QUOTES, 'UTF-8'); 
+
     }
 
     abstract public function setSpecificAttribute();

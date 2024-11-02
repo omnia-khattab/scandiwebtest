@@ -8,7 +8,10 @@ class DVD extends Product{
 
     public function __construct($sku, $name, $price, $productType, $size){
         parent::__construct($sku, $name, $price, $productType);
-        $this->size = $size;
+        
+        $this->size = htmlspecialchars($size, ENT_QUOTES, 'UTF-8'); 
+
+       // $this->size = $size;
     }
 
     public function setSpecificAttribute() {

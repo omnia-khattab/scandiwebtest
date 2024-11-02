@@ -96,7 +96,7 @@ const handleCheckboxChange = (e, productId) => {
                     onChange={(e) => handleCheckboxChange(e, product.sku)}
                     />
                 <label className="form-check-label" htmlFor="delete-checkbox">
-                    <div className="" key={product.sku}>
+                    <div className="text-break" key={product.sku}>
                         <p>{product.sku}</p>
                         <p>{product.name}</p>
                         <p>{product.price} $</p>
